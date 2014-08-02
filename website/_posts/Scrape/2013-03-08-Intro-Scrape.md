@@ -58,7 +58,7 @@ Postgres is a very popular database that is free and open source. Other popular 
 
 To learn why Postgres is go great, [Craig Kerstiens](http://twitter.com/craigkerstiens) of Heroku wrote up a nice [explanation](http://www.craigkerstiens.com/2012/04/30/why-postgres/).
 
-As an aside: when I first started learning how to code, the concept of having a database _on_ my computer blew me away. I assumed databases lived in headless computers that could handle the ubiquitous data. Turns out, it’s just like a simple program on your comptuer. Sure, if you’re a company, you’d want machines dedicated for serving up production-level data. But we’re not heavy-duty number crunching (yet!).
+As an aside: when I first started learning how to code, the concept of having a database _on_ my computer blew me away. I assumed databases lived in headless computers that could handle the ubiquitous data. Turns out, it’s just like a simple program on your computer. Sure, if you’re a company, you’d want machines dedicated for serving up production-level data. But we’re not heavy-duty number crunching (yet!).
 
 ### What is a cronjob?
 

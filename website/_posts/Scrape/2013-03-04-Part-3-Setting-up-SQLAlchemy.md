@@ -104,7 +104,7 @@ Let’s be better developers and change our import statement to `from sqlalchemy
 
 We make a general `import settings` statement – it does not import every item in `settings.py`, but it gives us access to any item we want by later using `settings.DATABASE`.  You can think of the difference between `import settings` versus `from sqlalchemy import *` as "take the basket" versus "take everything out of the basket."
 
-Last item I want to point out before we move on is the usage of the double astricks within the `URL()` function: `**settings.DATABASE`. First, we are accessing the `DATABASE` variable within `settings.py`. The `**` actually unpacks all the values within the `DATABASE` dictionary.  The `URL` function, a constructor defined within SQLAlchemy, will map keys and values to a URL that SQLAlchemy can understand to make a connection to our database.
+Last item I want to point out before we move on is the usage of the double astericks within the `URL()` function: `**settings.DATABASE`. First, we are accessing the `DATABASE` variable within `settings.py`. The `**` actually unpacks all the values within the `DATABASE` dictionary.  The `URL` function, a constructor defined within SQLAlchemy, will map keys and values to a URL that SQLAlchemy can understand to make a connection to our database.
 
 So first, our dictionary looks like:
 

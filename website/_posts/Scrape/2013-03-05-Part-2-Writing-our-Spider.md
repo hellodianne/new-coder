@@ -49,7 +49,7 @@ We basically tell scrapy where to start looking for information based on a defin
 
 I mean – look at that mess. We need to give the spider a little guidance.
 
-You see that `deals_list_xpath = '//ul[@class="unstyled cities-items"]/li[@dealid]'` sort of looks like the code we see with HTML.  You can read about how to contruct an XPath and working with relative XPaths in their [docs](http://doc.scrapy.org/en/0.16/topics/selectors.html#working-with-relative-xpaths). But essentially, the `'//ul[@class="unstyled cities-items"]/li[@dealid]'`  is saying: within all `<ul>` elements, if a `<ul class=` is defined as "unstyled cities-items", then go within that `<ul>` element to find `<li>` elements that have a parameter called `dealid`.
+You see that `deals_list_xpath = '//ul[@class="unstyled cities-items"]/li[@dealid]'` sort of looks like the code we see with HTML.  You can read about how to construct an XPath and working with relative XPaths in their [docs](http://doc.scrapy.org/en/0.16/topics/selectors.html#working-with-relative-xpaths). But essentially, the `'//ul[@class="unstyled cities-items"]/li[@dealid]'`  is saying: within all `<ul>` elements, if a `<ul class=` is defined as "unstyled cities-items", then go within that `<ul>` element to find `<li>` elements that have a parameter called `dealid`.
 
 Try it out: within your “View Source” page of the Living Social website, search within the source itself (either pressing CMD+F or CTRL+F within the page) and search for `"unstyled cities-items"` - you will see:
 
@@ -148,11 +148,11 @@ we’ll iterate over each deal we find from the `deals_list_xpath`, and then we 
 	loader.default_output_processor = Join()
 ```
 
-Here we grab the deal and pass it into XPathItemLoader through the `selector` parameter, along with the `LivingSocialDeal()` class, and assign the `loader` variable.  We then setup the process for deal data first by stripping out white-space of unicode strings, then join the data together. Since we did not define any separater within `Join()`, the data items are just joined by a space, and is helpful for when we have multi-line data.
+Here we grab the deal and pass it into XPathItemLoader through the `selector` parameter, along with the `LivingSocialDeal()` class, and assign the `loader` variable.  We then setup the process for deal data first by stripping out white-space of unicode strings, then join the data together. Since we did not define any separator within `Join()`, the data items are just joined by a space, and is helpful for when we have multi-line data.
 
 We then iterate over each key and value of `items_fields` and add a the specific data piece's xpath to the loader.
 
-Finally, with each deal, we process each data parcel by calling `load_item()`, which will grab each item field, 'title', 'link', etc, for each deal, get its xpath, process its data with the input & output processer.  We finally then `yield` each item, then move on to the next deal that we find:
+Finally, with each deal, we process each data parcel by calling `load_item()`, which will grab each item field, 'title', 'link', etc, for each deal, get its xpath, process its data with the input & output processor.  We finally then `yield` each item, then move on to the next deal that we find:
 
 ```python
 
